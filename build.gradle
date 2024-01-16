@@ -61,6 +61,7 @@ android {
     sourceSets {
         main {
             res.srcDirs = ['java/res']
+            jniLibs.srcDirs = ['java/libs']
             java.srcDirs = ['common/src', 'java/src']
             manifest.srcFile 'java/AndroidManifest.xml'
         }
@@ -80,11 +81,11 @@ android {
         noCompress 'dict'
     }
 
-    externalNativeBuild {
-        ndkBuild {
-            path 'native/jni/Android.mk'
-        }
-    }
+//    externalNativeBuild {
+//        ndkBuild {
+//            path 'native/jni/Android.mk'
+//        }
+//    }
 }
 
 repositories {
@@ -96,7 +97,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'androidx.legacy:legacy-support-v4:+'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
 
     testImplementation 'junit:junit:4.12'
