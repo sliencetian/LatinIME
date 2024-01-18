@@ -990,6 +990,9 @@ public class Key implements Comparable<Key> {
     public final Drawable selectBackgroundDrawable(@Nonnull final Drawable keyBackground,
             @Nonnull final Drawable functionalKeyBackground,
             @Nonnull final Drawable spacebarBackground) {
+        if (mBackgroundType == BACKGROUND_TYPE_EMPTY){
+            return null;
+        }
         final Drawable background;
         if (mBackgroundType == BACKGROUND_TYPE_FUNCTIONAL) {
             background = functionalKeyBackground;

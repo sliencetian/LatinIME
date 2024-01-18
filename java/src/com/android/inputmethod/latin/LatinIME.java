@@ -1585,7 +1585,7 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
                 || shouldShowSuggestionCandidates
                 || currentSettingsValues.isApplicationSpecifiedCompletionsOn();
         final boolean shouldShowSuggestionsStrip = shouldShowSuggestionsStripUnlessPassword
-                && !currentSettingsValues.mInputAttributes.mIsPasswordField;
+                && !currentSettingsValues.mInputAttributes.mIsPasswordField && false;
         mSuggestionStripView.updateVisibility(shouldShowSuggestionsStrip, isFullscreenMode());
         if (!shouldShowSuggestionsStrip) {
             return;
@@ -2004,7 +2004,7 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
         if (token == null) {
             return fallbackValue;
         }
-        return mRichImm.shouldOfferSwitchingToNextInputMethod(token, fallbackValue);
+        return mRichImm.shouldOfferSwitchingToNextInputMethod(token, fallbackValue) && false;
     }
 
     private void setNavigationBarVisibility(final boolean visible) {
